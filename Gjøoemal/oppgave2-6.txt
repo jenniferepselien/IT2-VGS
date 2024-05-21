@@ -1,0 +1,9 @@
+Oppgave 2.6 
+svar er 1
+
+1:
+SET n TO 1
+WHILE n LESSER THAN OR EQUAL TO 10
+  INCREMENT n
+  DISPLAY n
+ENDWHILE
