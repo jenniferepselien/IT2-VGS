@@ -1,10 +1,5 @@
 import json
 
-with open('pokemon.json', 'r', encoding='utf-8') as file:
-    pokemon_data = json.load(file)
-
-print(pokemon_data)
-
 class Pokemon:
     def __init__(self, id, name, types, base_stats):
         self._id = id
@@ -68,8 +63,9 @@ with open('pokemon.json', 'r', encoding='utf-8') as file:
 
 pokemon_liste = []
 
-bulbasaur = Pokemon(pokemon_data['id'], pokemon_data['name']['english'], pokemon_data['type'], pokemon_data['base'])
-charmander = Pokemon(pokemon_data['id'], pokemon_data['name']['english'], pokemon_data['type'], pokemon_data['base'])
+for pd in pokemon_data:
+    pokemon = Pokemon(pd['id'], pd['name']['english'], pd['type'], pd['base'])
+    pokemon_liste.append(pokemon)
 
 trenere = []
 
@@ -93,5 +89,3 @@ while True:
         break
     else:
         print("Ugyldig valg. Prøv igjen.")
-
-
